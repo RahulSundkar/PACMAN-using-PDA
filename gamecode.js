@@ -19,6 +19,7 @@ class Boundry {
 }
 
 class Player {
+    static speed = 2.5;
     constructor({ position, velocity }) {
         this.position = position
         this.velocity = velocity
@@ -52,6 +53,7 @@ class Player {
 }
 
 class Ghost {
+    static speed = 3.5;
     constructor({ position, velocity, color}) {
         this.position = position
         this.velocity = velocity
@@ -180,7 +182,7 @@ function createImage(src) {
     return image
 }
 
-const totalFood = parseInt(prompt("Enter Total number of Food (max 72) : ")) || 5 
+const totalFood = parseInt(prompt("Enter Total number of Food (max 72) : ")) || 72
 // let stack = []
 
 
@@ -370,7 +372,12 @@ map.forEach((row, i) => {
 
 function circlecollision({circle, rectangle}) {
     const padding = 20 - circle.radius - 1
-    return (circle.position.y - circle.radius + circle.velocity.y <= rectangle.position.y + rectangle.height + padding && circle.position.x + circle.radius + circle.velocity.x >= rectangle.position.x - padding && circle.position.y + circle.radius + circle.velocity.y >= rectangle.position.y - padding && circle.position.x - circle.radius + circle.velocity.x <= rectangle.position.x + rectangle.width + padding)
+    return (
+        circle.position.y - circle.radius + circle.velocity.y <= rectangle.position.y + rectangle.height + padding 
+        && circle.position.x + circle.radius + circle.velocity.x >= rectangle.position.x - padding 
+        && circle.position.y + circle.radius + circle.velocity.y >= rectangle.position.y - padding 
+        && circle.position.x - circle.radius + circle.velocity.x <= rectangle.position.x + rectangle.width + padding
+        )
 
 }
 
@@ -385,7 +392,7 @@ function animate() {
             if (circlecollision({
                 circle: {
                     ...player, velocity: {
-                        x: 0, y: -2
+                        x: 0, y: -Player.speed
                     }
                 },
                 rectangle: boundry
@@ -394,7 +401,7 @@ function animate() {
                 break
             }
             else {
-                player.velocity.y = -2
+                player.velocity.y = -Player.speed
             }
         }
 
@@ -405,7 +412,7 @@ function animate() {
             if (circlecollision({
                 circle: {
                     ...player, velocity: {
-                        x: -2, y: 0
+                        x: -Player.speed, y: 0
                     }
                 },
                 rectangle: boundry
@@ -414,7 +421,7 @@ function animate() {
                 break
             }
             else {
-                player.velocity.x = -2
+                player.velocity.x = -Player.speed
             }
         }
     }
@@ -424,7 +431,7 @@ function animate() {
             if (circlecollision({
                 circle: {
                     ...player, velocity: {
-                        x: 0, y: 2
+                        x: 0, y: Player.speed
                     }
                 },
                 rectangle: boundry
@@ -433,7 +440,7 @@ function animate() {
                 break
             }
             else {
-                player.velocity.y = 2
+                player.velocity.y = Player.speed
             }
         }
     }
@@ -443,7 +450,7 @@ function animate() {
             if (circlecollision({
                 circle: {
                     ...player, velocity: {
-                        x: 2, y: 0
+                        x: Player.speed, y: 0
                     }
                 },
                 rectangle: boundry
@@ -452,7 +459,7 @@ function animate() {
                 break
             }
             else {
-                player.velocity.x = 2
+                player.velocity.x = Player.speed
             }
         }
     }
