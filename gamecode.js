@@ -180,8 +180,11 @@ function createImage(src) {
     return image
 }
 
-const totalFood = parseInt(prompt("Enter Total number of Food (max 72) : ")) || 5 
+let totalFood = parseInt(prompt("Enter Total number of Food (max 72) : ")) || 5 
 
+if(totalFood > 72){
+    totalFood = 72
+}
 
 const initializeStack = () => {
     let stack = document.getElementById("stack")
