@@ -6,12 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pacman Game </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <style>
     body {
         display: flex;
         justify-content: center;
         background-color: black;
+        font-family: 'Press Start 2P', cursive;
         margin: 0;
     }
 
@@ -23,7 +27,8 @@
     .header{
         color: white;
         text-align: center;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+        font-family: 'Press Start 2P', cursive;
     }
     .header p{
         font-size: 2rem;
@@ -43,7 +48,8 @@
         align-items: center;
         margin-left: 1rem;
         border-radius: 1rem;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+        font-family: 'Press Start 2P', cursive;
         color: white;
     }
     .stackContainer h3 {
@@ -75,6 +81,7 @@
         border: 1px solid #2E7D32;
         color: white;
         font-weight: bold;
+        padding: 0.5rem;
     }
     .zo{
         border: 1px solid white;
@@ -84,6 +91,7 @@
         background-color: #F44336;
         border: 1px solid #F44336;
         font-weight: bold;
+        padding: 0.5rem;
     }
     #scoreEl {
         font-weight: bold;
@@ -94,8 +102,8 @@
     <div>
 
         <div class="header">
-            <h1>DSAAT Course Project</h1>
-            <h3>PAC-MAN Push Down Automata</h3>
+            <h1>PAC-MAN Push Down Automata</h1>
+            <h3>AIDS B3 Group 11</h3>
             <p>
                 Score : <span id="scoreEl">0</span>
             </p>
