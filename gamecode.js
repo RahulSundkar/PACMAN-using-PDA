@@ -464,7 +464,7 @@ function animate() {
             cancelAnimationFrame(animationId)
 
             console.log('You Lose!')
-            if (confirm("Game Over, Play again")) {
+            if (confirm("😔You Lose\nGame Over, Play again")) {
                 txt = "Restart";
                 window.location.reload()
             }  
@@ -474,6 +474,10 @@ function animate() {
     if(foods.length === 0){
         console.log('You Win!!!')
         cancelAnimationFrame(animationId)
+        if (confirm("🏆You Win!!!\nGame Over, Play again")) {
+            txt = "Restart";
+            window.location.reload()
+        }  
     }   
 
     const updateFoodStack = () =>{
