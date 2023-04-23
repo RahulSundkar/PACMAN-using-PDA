@@ -99,7 +99,7 @@ const ghosts = [
             y: 60
         },
         velocity: {
-            x: 1.5,
+            x: 1,
             y: 0
         },
         color: 'red'
@@ -110,7 +110,7 @@ const ghosts = [
             y: 40 * 3 + 20
         },
         velocity: {
-            x: 1.5,
+            x: 1,
             y: 0
         },
         color: 'pink'
@@ -121,7 +121,7 @@ const ghosts = [
             y: 40 * 7 + 20
         },
         velocity: {
-            x: 1.5,
+            x: 1,
             y: 0
         },
         color: 'blue'
@@ -157,7 +157,7 @@ const keys = {
 let lastkey = ''
 
 let score = 0
-//  LOADING STATE 
+
 const map = [
     ['1', '-', '-', '-', '-', '-', '-', '-', '-', '-', '2'],
     ['|', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '|'],
@@ -181,7 +181,6 @@ function createImage(src) {
 }
 
 const totalFood = parseInt(prompt("Enter Total number of Food (max 72) : ")) || 5 
-// let stack = []
 
 
 const initializeStack = () => {
@@ -514,7 +513,7 @@ function animate() {
             if (!collisions.includes('right') && circlecollision({
                 circle: {
                     ...ghost, velocity: {
-                        x: 1.5, y: 0
+                        x: 1, y: 0
                     }
                 },
                 rectangle: boundry
@@ -525,7 +524,7 @@ function animate() {
             if (!collisions.includes('left') && circlecollision({
                 circle: {
                     ...ghost, velocity: {
-                        x: -1.5, y: 0
+                        x: -1, y: 0
                     }
                 },
                 rectangle: boundry
@@ -536,7 +535,7 @@ function animate() {
             if (!collisions.includes('up') && circlecollision({
                 circle: {
                     ...ghost, velocity: {
-                        x: 0, y: -1.5
+                        x: 0, y: -1
                     }
                 },
                 rectangle: boundry
@@ -547,7 +546,7 @@ function animate() {
             if (!collisions.includes('down') && circlecollision({
                 circle: {
                     ...ghost, velocity: {
-                        x: 0, y: 1.5
+                        x: 0, y: 1
                     }
                 },
                 rectangle: boundry
@@ -573,23 +572,23 @@ function animate() {
 
             switch (direction) {
                 case 'down':
-                    ghost.velocity.y = 2
+                    ghost.velocity.y = 1
                     ghost.velocity.x = 0
                     break
 
                 case 'up':
-                    ghost.velocity.y = -2
+                    ghost.velocity.y = -1
                     ghost.velocity.x = 0
                     break
 
                 case 'right':
                     ghost.velocity.y = 0
-                    ghost.velocity.x = 2
+                    ghost.velocity.x = 1
                     break
 
                 case 'left':
                     ghost.velocity.y = 0
-                    ghost.velocity.x = -2
+                    ghost.velocity.x = -1
                     break
             }
 
